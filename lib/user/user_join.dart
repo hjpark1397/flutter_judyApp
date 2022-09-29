@@ -19,12 +19,16 @@ class _UserJoinPageState extends State<UserJoinPage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("회원가입"),
+        title: const Text("회원가입"),
+        backgroundColor: Colors.black,
       ),
-      body: Column(
-        children: [
+      body: Container(
+        color: Colors.black,
+        child: Column(
+          children: [
 
-        ],
+          ],
+        ),
       ),
     );
   }

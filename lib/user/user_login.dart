@@ -38,69 +38,75 @@ class _UserLoginPageState extends State<UserLoginPage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("로그인", style: TextStyle(color: Colors.black45),),
+        title: const Text("로그인", style: TextStyle(color: Colors.white),),
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
       ),
-      body: Form(
-        key: _loginkey, //유효성 검증
-        child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 50.0),
-         children: [
-           SizedBox(
-             child: Image.asset('assets/images/dumbell.png'),
-             height: 200,
-             width: 200,
-           ),
-           const SizedBox(height: 10,),
-           // const Text("Today's WOD",
-           //   textAlign: TextAlign.center,
-           //   style: TextStyle(fontWeight: FontWeight.bold,
-           //   fontSize: 25,color: Colors.black45),),
-           const SizedBox(height: 10,),
-           TextFormField(
-              controller: _useridController,
-              validator: (value){
-
-              },
-             decoration: const InputDecoration(
-               border:OutlineInputBorder(),
-               hintText: '아이디 입력',
-               hintStyle: TextStyle(color: Colors.black45),
+      body: Container(
+        color: Colors.black,
+        child: Form(
+          key: _loginkey, //유효성 검증
+          child: ListView(
+            padding: const EdgeInsets.symmetric(horizontal: 50.0),
+            children: [
+             const SizedBox(height: 100,),
+             SizedBox(
+               child: Image.asset('assets/images/helper_dark.png'),
+               height: 150,
+               width: 150,
              ),
-           ),
-           const SizedBox(height: 10,),//위 아래 폼 사이의 간격을 주기
-           TextFormField(
-             controller: _passwordController,
-             validator: (value){
+             const SizedBox(height: 20,),
+             const Text("WODaily",
+               textAlign: TextAlign.center,
+               style: TextStyle(fontWeight: FontWeight.bold,
+               fontSize: 25,color: Colors.white),),
+             const SizedBox(height: 20,),
+             TextFormField(
+                controller: _useridController,
+                validator: (value){
 
-             },
-             decoration: const InputDecoration(
+                },
+               decoration: const InputDecoration(
                  border:OutlineInputBorder(),
-                 hintText: '비밀번호 입력',
-                 hintStyle: TextStyle(color: Colors.black45),
-
+                 hintText: '아이디 입력',
+                 hintStyle: TextStyle(color: Colors.white),
+               ),
+               cursorColor: Colors.white,
              ),
-             obscureText: true,//비밀번호 형식으로 작성이 됨
-           ),
-           const SizedBox(height: 20,),
-           SizedBox(
-             height: 50,
-             child: ElevatedButton(
-               onPressed: (){
+             const SizedBox(height: 10,),//위 아래 폼 사이의 간격을 주기
+             TextFormField(
+               controller: _passwordController,
+               validator: (value){
 
-             }, child: const Text("로그인", style: TextStyle(color: Colors.black45),),
-             style: ElevatedButton.styleFrom(primary: CustomColor.custompastelyellow,),
+               },
+               decoration: const InputDecoration(
+                   border:OutlineInputBorder(),
+                   hintText: '비밀번호 입력',
+                   hintStyle: TextStyle(color: Colors.white),
+
+               ),
+               cursorColor: Colors.white,
+               obscureText: true,//비밀번호 형식으로 작성이 됨
              ),
-           ),
-           const SizedBox(height: 10,),
-           TextButton(onPressed: (){
-             // 왜 Get 네비게이터 안되는거냐 킹받게
-             // Get.to(() => UserJoinPage());
-             Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const UserJoinPage()));
-           }, child: const Text("아직 회원이 아니신가요?  회원가입하기"),
-           style: TextButton.styleFrom(primary: CustomColor.customlightcharcoal),)
-         ],
+             const SizedBox(height: 20,),
+             SizedBox(
+               height: 50,
+               child: ElevatedButton(
+                 onPressed: (){
+
+               }, child: const Text("로그인", style: TextStyle(color: Colors.black45),),
+               style: ElevatedButton.styleFrom(primary: Colors.white,),
+               ),
+             ),
+             const SizedBox(height: 10,),
+             TextButton(onPressed: (){
+               // 왜 Get 네비게이터 안되는거냐 킹받게
+               // Get.to(() => UserJoinPage());
+               Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const UserJoinPage()));
+             }, child: const Text("아직 회원이 아니신가요?  회원가입하기"),
+             style: TextButton.styleFrom(primary: CustomColor.customlightcharcoal),)
+           ],
+          ),
         ),
       ),
     );
