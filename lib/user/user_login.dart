@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:judy_app/user/user_join.dart';
 import 'package:judy_app/util/custom_color.dart';
 
 /* flutter가 StatefulWidget을 만들때, State 객체를 만든다.
@@ -51,10 +53,10 @@ class _UserLoginPageState extends State<UserLoginPage>{
              width: 200,
            ),
            const SizedBox(height: 10,),
-           const Text("Today's WOD",
-             textAlign: TextAlign.center,
-             style: TextStyle(fontWeight: FontWeight.bold,
-             fontSize: 25,color: Colors.black45),),
+           // const Text("Today's WOD",
+           //   textAlign: TextAlign.center,
+           //   style: TextStyle(fontWeight: FontWeight.bold,
+           //   fontSize: 25,color: Colors.black45),),
            const SizedBox(height: 10,),
            TextFormField(
               controller: _useridController,
@@ -93,7 +95,9 @@ class _UserLoginPageState extends State<UserLoginPage>{
            ),
            const SizedBox(height: 10,),
            TextButton(onPressed: (){
-
+             // 왜 Get 네비게이터 안되는거냐 킹받게
+             // Get.to(() => UserJoinPage());
+             Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const UserJoinPage()));
            }, child: const Text("아직 회원이 아니신가요?  회원가입하기"),
            style: TextButton.styleFrom(primary: CustomColor.customlightcharcoal),)
          ],

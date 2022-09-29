@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 /* 1. 클래스를 만들어준다. 해당 클래스가 Stateless위젯으로 사용될지, StatefulWidget으로 사용될지 생각한다.*/
 class UserJoinPage extends StatefulWidget{
   const UserJoinPage({Key? key}) : super(key: key);
@@ -16,7 +17,15 @@ class UserJoinPage extends StatefulWidget{
 class _UserJoinPageState extends State<UserJoinPage>{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("회원가입"),
+      ),
+      body: Column(
+        children: [
+
+        ],
+      ),
+    );
   }
 }

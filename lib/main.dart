@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     *
     * 나의 의도는 로그인 페이지를 불러올 것인데, 이 페이지는 Scaffold 라는 형태로 구성이 되어있다.
     * */
-    return MaterialApp(
+    return const MaterialApp(
       home : UserLoginPage(), //로그인 페이지가 맨 처음에 나오도록 홈으로 지정할 것이야!
     );
   }
