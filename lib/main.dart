@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:judy_app/user/user_login.dart'; //user_login page import
 
 /*
-* 무조건 메인에서 구동
+* 무조건 메인에서 시작된다.
+* runApp
+* MyApp이라는 위젯 클래스를 실행한다.
 * */
-//플러터 앱 실행의 시작
 void main() {
   runApp(const MyApp());
 }
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     /*
-    * 프로젝트를 생성하면 MaterialApp에서 title, theme, home 이라는 세가지 옵션이 들어가있다.
+    * 프로젝트를 생성하면 MaterialApp에 title, theme, home 이라는 세가지 옵션이 들어가있다.
     * 이때 필수 속성은 home -> 제일 먼저 나오는 페이지가 어떤 것일지 반드시 지정을 해주어야 한다.
     * home의 속성 값은 반드시 위젯이어야 한다.
     *
