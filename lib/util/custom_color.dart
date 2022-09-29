@@ -10,5 +10,6 @@ class CustomColor {//커스텀 컬러 값 지정한 부분
   static Color customlightcharcoal = const Color(0xffbfbfbf);
   static Color customlightgreyaccent = const Color(0xffdedede);
   static Color custompastelyellow = const Color(0xfffdfd96);
+  static Color kakaoyellow = const Color(0xfffef01b);
 }
 

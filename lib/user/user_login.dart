@@ -59,7 +59,8 @@ class _UserLoginPageState extends State<UserLoginPage>{
              const Text("WODaily",
                textAlign: TextAlign.center,
                style: TextStyle(fontWeight: FontWeight.bold,
-               fontSize: 25,color: Colors.white),),
+               fontSize: 25, color: Colors.white),
+             ),
              const SizedBox(height: 20,),
              TextFormField(
                 controller: _useridController,
@@ -72,6 +73,7 @@ class _UserLoginPageState extends State<UserLoginPage>{
                  hintStyle: TextStyle(color: Colors.white),
                ),
                cursorColor: Colors.white,
+               style: const TextStyle(color:Colors.white),
              ),
              const SizedBox(height: 10,),//위 아래 폼 사이의 간격을 주기
              TextFormField(
@@ -86,6 +88,7 @@ class _UserLoginPageState extends State<UserLoginPage>{
 
                ),
                cursorColor: Colors.white,
+               style: const TextStyle(color:Colors.white),
                obscureText: true,//비밀번호 형식으로 작성이 됨
              ),
              const SizedBox(height: 20,),
@@ -94,7 +97,7 @@ class _UserLoginPageState extends State<UserLoginPage>{
                child: ElevatedButton(
                  onPressed: (){
 
-               }, child: const Text("로그인", style: TextStyle(color: Colors.black45),),
+               }, child: const Text("로그인", style: TextStyle(color: Colors.black),),
                style: ElevatedButton.styleFrom(primary: Colors.white,),
                ),
              ),
@@ -104,7 +107,17 @@ class _UserLoginPageState extends State<UserLoginPage>{
                // Get.to(() => UserJoinPage());
                Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const UserJoinPage()));
              }, child: const Text("아직 회원이 아니신가요?  회원가입하기"),
-             style: TextButton.styleFrom(primary: CustomColor.customlightcharcoal),)
+             style: TextButton.styleFrom(primary: CustomColor.customlightcharcoal),),
+             const SizedBox(height: 10,),
+             SizedBox(
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: (){
+
+                  }, child: const Text("카카오톡으로 로그인", style: TextStyle(color: Colors.black),),
+                  style: ElevatedButton.styleFrom(primary: CustomColor.kakaoyellow,),
+                ),
+              ),
            ],
           ),
         ),
