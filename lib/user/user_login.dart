@@ -43,7 +43,19 @@ class _UserLoginPageState extends State<UserLoginPage>{
       body: Form(
         key: _loginkey, //유효성 검증
         child: ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 50.0),
          children: [
+           SizedBox(
+             child: Image.asset('assets/images/dumbell.png'),
+             height: 200,
+             width: 200,
+           ),
+           const SizedBox(height: 10,),
+           const Text("Today's WOD",
+             textAlign: TextAlign.center,
+             style: TextStyle(fontWeight: FontWeight.bold,
+             fontSize: 25,color: Colors.black45),),
+           const SizedBox(height: 10,),
            TextFormField(
               controller: _useridController,
               validator: (value){
@@ -65,16 +77,20 @@ class _UserLoginPageState extends State<UserLoginPage>{
                  border:OutlineInputBorder(),
                  hintText: '비밀번호 입력',
                  hintStyle: TextStyle(color: Colors.black45),
-                 focusedBorder: 
+
              ),
              obscureText: true,//비밀번호 형식으로 작성이 됨
            ),
-           const SizedBox(height: 10,),
-           ElevatedButton(
-             onPressed: (){
+           const SizedBox(height: 20,),
+           SizedBox(
+             height: 50,
+             child: ElevatedButton(
+               onPressed: (){
 
-           }, child: const Text("로그인", style: TextStyle(color: Colors.black45),),
-           style: ElevatedButton.styleFrom(primary: CustomColor.custompastelyellow),),
+             }, child: const Text("로그인", style: TextStyle(color: Colors.black45),),
+             style: ElevatedButton.styleFrom(primary: CustomColor.custompastelyellow,),
+             ),
+           ),
            const SizedBox(height: 10,),
            TextButton(onPressed: (){
 
