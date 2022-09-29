@@ -49,7 +49,7 @@ class _UserLoginPageState extends State<UserLoginPage>{
           child: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             children: [
-             const SizedBox(height: 100,),
+             const SizedBox(height: 80,),
              SizedBox(
                child: Image.asset('assets/images/helper_dark.png'),
                height: 150,
