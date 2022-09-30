@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:judy_app/user/user_login.dart'; //user_login page import
 
@@ -5,8 +6,12 @@ import 'package:judy_app/user/user_login.dart'; //user_login page import
 * 무조건 메인에서 시작된다.
 * runApp
 * MyApp이라는 위젯 클래스를 실행한다.
+*
+* 220930 - firebase연동 추가
 * */
-void main() {
+void main(){
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

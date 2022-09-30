@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,6 +27,12 @@ class _UserLoginPageState extends State<UserLoginPage>{
   @override
   void initState(){
     super.initState();
+    firebaseAuthInit();
+  }
+
+  void firebaseAuthInit() async{
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
   }
 
   //dispose : state 제거 (페이지를 나갈 때)
@@ -51,11 +59,11 @@ class _UserLoginPageState extends State<UserLoginPage>{
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             children: [
              const SizedBox(height: 80,),
-             SizedBox(
-               child: Image.asset('assets/images/helper_dark.png'),
-               height: 150,
-               width: 150,
-             ),
+             // SizedBox(
+             //   child: Image.asset('assets/images/helper_dark.png'),
+             //   height: 150,
+             //   width: 150,
+             // ),
              const SizedBox(height: 20,),
              const Text("WODaily",
                textAlign: TextAlign.center,
@@ -97,6 +105,8 @@ class _UserLoginPageState extends State<UserLoginPage>{
                height: 50,
                child: ElevatedButton(
                  onPressed: (){
+                   //로그인 버튼을 누르면 firebase에서 익명으로 로그인이 수행됨
+                   FirebaseAuth.instance.signInAnonymously();
                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const WodListPage()));
                }, child: const Text("로그인", style: TextStyle(color: Colors.black),),
                style: ElevatedButton.styleFrom(primary: Colors.white,),
