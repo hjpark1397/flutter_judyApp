@@ -26,8 +26,8 @@ class _UserLoginPageState extends State<UserLoginPage>{
   //initState : 위젯이 생성될 때 처음으로 호출되는 메소드
   @override
   void initState(){
-    super.initState();
     firebaseAuthInit();
+    super.initState();
   }
 
   void firebaseAuthInit() async{
@@ -106,7 +106,7 @@ class _UserLoginPageState extends State<UserLoginPage>{
                child: ElevatedButton(
                  onPressed: (){
                    //로그인 버튼을 누르면 firebase에서 익명으로 로그인이 수행됨
-                   FirebaseAuth.instance.signInAnonymously();
+                   // FirebaseAuth.instance.signInAnonymously();
                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const WodListPage()));
                }, child: const Text("로그인", style: TextStyle(color: Colors.black),),
                style: ElevatedButton.styleFrom(primary: Colors.white,),

@@ -8,7 +8,9 @@ class WodListPage extends StatefulWidget{
   @override
   _WodListPageState createState() => _WodListPageState();
 }
+
 class _WodListPageState extends State<WodListPage>{
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
