@@ -6,14 +6,9 @@ class UserJoinPage extends StatefulWidget{
 
   @override
   _UserJoinPageState createState() => _UserJoinPageState();
-  // @override
-  // State<StatefulWidget> createState() {
-  //   // TODO: implement createState
-  //   throw UnimplementedError();
-  // }
 }
 
-//UserJoinPage를 부모로 하는 _UserJoinPageState 클래스를 선언한다.
+//Stateful 위젯으로 선언했으니, UserJoinPage를 부모로 하는 _UserJoinPageState 클래스를 선언한다.
 class _UserJoinPageState extends State<UserJoinPage>{
   @override
   Widget build(BuildContext context) {

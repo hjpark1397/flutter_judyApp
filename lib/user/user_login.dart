@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:judy_app/user/user_join.dart';
+import 'package:judy_app/user/wod_list.dart';
 import 'package:judy_app/util/custom_color.dart';
 
 /* flutter가 StatefulWidget을 만들때, State 객체를 만든다.
@@ -96,7 +97,7 @@ class _UserLoginPageState extends State<UserLoginPage>{
                height: 50,
                child: ElevatedButton(
                  onPressed: (){
-
+                   Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const WodListPage()));
                }, child: const Text("로그인", style: TextStyle(color: Colors.black),),
                style: ElevatedButton.styleFrom(primary: Colors.white,),
                ),

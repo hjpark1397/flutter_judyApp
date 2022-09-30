@@ -44,6 +44,8 @@ dependencies:
   jwt_decode: ^0.3.1
   #GetX controller사용
   get: ^4.6.5
+  #firebase_core
+  firebase_core: ^1.24.0
 
 dev_dependencies:
   flutter_test:
