@@ -71,64 +71,64 @@ class _UserLoginPageState extends State<UserLoginPage>{
                fontSize: 25, color: Colors.white),
              ),
              const SizedBox(height: 20,),
-             TextFormField(
-                controller: _useridController,
-                validator: (value){
-
-                },
-               decoration: const InputDecoration(
-                 border:OutlineInputBorder(),
-                 hintText: '아이디 입력',
-                 hintStyle: TextStyle(color: Colors.white),
-               ),
-               cursorColor: Colors.white,
-               style: const TextStyle(color:Colors.white),
-             ),
-             const SizedBox(height: 10,),//위 아래 폼 사이의 간격을 주기
-             TextFormField(
-               controller: _passwordController,
-               validator: (value){
-
-               },
-               decoration: const InputDecoration(
-                   border:OutlineInputBorder(),
-                   hintText: '비밀번호 입력',
-                   hintStyle: TextStyle(color: Colors.white),
-
-               ),
-               cursorColor: Colors.white,
-               style: const TextStyle(color:Colors.white),
-               obscureText: true,//비밀번호 형식으로 작성이 됨
-             ),
+             // TextFormField(
+             //    controller: _useridController,
+             //    validator: (value){
+             //
+             //    },
+             //   decoration: const InputDecoration(
+             //     border:OutlineInputBorder(),
+             //     hintText: '아이디 입력',
+             //     hintStyle: TextStyle(color: Colors.white),
+             //   ),
+             //   cursorColor: Colors.white,
+             //   style: const TextStyle(color:Colors.white),
+             // ),
+             // const SizedBox(height: 10,),//위 아래 폼 사이의 간격을 주기
+             // TextFormField(
+             //   controller: _passwordController,
+             //   validator: (value){
+             //
+             //   },
+             //   decoration: const InputDecoration(
+             //       border:OutlineInputBorder(),
+             //       hintText: '비밀번호 입력',
+             //       hintStyle: TextStyle(color: Colors.white),
+             //
+             //   ),
+             //   cursorColor: Colors.white,
+             //   style: const TextStyle(color:Colors.white),
+             //   obscureText: true,//비밀번호 형식으로 작성이 됨
+             // ),
              const SizedBox(height: 20,),
              SizedBox(
                height: 50,
                child: ElevatedButton(
                  onPressed: (){
                    //로그인 버튼을 누르면 firebase에서 익명으로 로그인이 수행됨
-                   FirebaseAuth.instance.signInAnonymously();
+                   FirebaseAuth.instance.signInAnonymously(); //토큰값이 console에 나타남
                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const WodListPage()));
                }, child: const Text("로그인", style: TextStyle(color: Colors.black),),
                style: ElevatedButton.styleFrom(primary: Colors.white,),
                ),
              ),
              const SizedBox(height: 10,),
-             TextButton(onPressed: (){
-               // 왜 Get 네비게이터 안되는거냐 킹받게
-               // Get.to(() => UserJoinPage());
-               Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const UserJoinPage()));
-             }, child: const Text("아직 회원이 아니신가요?  회원가입하기"),
-             style: TextButton.styleFrom(primary: CustomColor.customlightcharcoal),),
-             const SizedBox(height: 10,),
-             SizedBox(
-                height: 50,
-                child: ElevatedButton(
-                  onPressed: (){
-
-                  }, child: const Text("카카오톡으로 로그인", style: TextStyle(color: Colors.black),),
-                  style: ElevatedButton.styleFrom(primary: CustomColor.kakaoyellow,),
-                ),
-              ),
+             // TextButton(onPressed: (){
+             //   // 왜 Get 네비게이터 안되는거냐 킹받게
+             //   // Get.to(() => UserJoinPage());
+             //   Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const UserJoinPage()));
+             // }, child: const Text("아직 회원이 아니신가요?  회원가입하기"),
+             // style: TextButton.styleFrom(primary: CustomColor.customlightcharcoal),),
+             // const SizedBox(height: 10,),
+             // SizedBox(
+             //    height: 50,
+             //    child: ElevatedButton(
+             //      onPressed: (){
+             //
+             //      }, child: const Text("카카오톡으로 로그인", style: TextStyle(color: Colors.black),),
+             //      style: ElevatedButton.styleFrom(primary: CustomColor.kakaoyellow,),
+             //    ),
+             //  ),
            ],
           ),
         ),
