@@ -21,8 +21,6 @@ class UserLoginPage extends StatefulWidget{
   _UserLoginPageState createState() => _UserLoginPageState();
 }
 class _UserLoginPageState extends State<UserLoginPage>{
-  //Lottie 사용 초기화
-  late final Future<LottieComposition> _composition;
 
   final _useridController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -34,14 +32,12 @@ class _UserLoginPageState extends State<UserLoginPage>{
   void initState(){
     firebaseAuthInit();
     super.initState();
-    // _composition = _loadComposition();
   }
 
   void firebaseAuthInit() async{
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp();
   }
-
 
 
   //dispose : state 제거 (페이지를 나갈 때)
@@ -68,9 +64,9 @@ class _UserLoginPageState extends State<UserLoginPage>{
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             children: [
              const SizedBox(height: 80,),
-              // Lottie.asset('assets/116410-hello.json'),
-             // Lottie.asset('assets/lottie/116410-hello.zip'),
-             Lottie.network('https://assets2.lottiefiles.com/packages/lf20_7psw7qge.json'),
+             Lottie.asset('assets/lottiefiles/404_icon.json'),
+             Lottie.asset('assets/lottiefiles/116410-hello.zip'),
+             // Lottie.network('https://assets7.lottiefiles.com/packages/lf20_2QSlz3Li88.json'),
              // SizedBox(
              //   child: Image.asset('assets/images/helper_dark.png'),
              //   height: 150,
