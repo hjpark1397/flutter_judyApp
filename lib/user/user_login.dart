@@ -1,11 +1,15 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:judy_app/user/user_join.dart';
 import 'package:judy_app/user/wod_list.dart';
 import 'package:judy_app/util/custom_color.dart';
+import 'package:lottie/lottie.dart';
 
 /* flutter가 StatefulWidget을 만들때, State 객체를 만든다.
 그리고 StatefulWidget을 빌드하라고 지시하면 createState() 가 호출된다.
@@ -17,6 +21,8 @@ class UserLoginPage extends StatefulWidget{
   _UserLoginPageState createState() => _UserLoginPageState();
 }
 class _UserLoginPageState extends State<UserLoginPage>{
+  //Lottie 사용 초기화
+  late final Future<LottieComposition> _composition;
 
   final _useridController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -28,12 +34,15 @@ class _UserLoginPageState extends State<UserLoginPage>{
   void initState(){
     firebaseAuthInit();
     super.initState();
+    // _composition = _loadComposition();
   }
 
   void firebaseAuthInit() async{
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp();
   }
+
+
 
   //dispose : state 제거 (페이지를 나갈 때)
   @override
@@ -52,24 +61,33 @@ class _UserLoginPageState extends State<UserLoginPage>{
         backgroundColor: Colors.black,
       ),
       body: Container(
-        color: Colors.black,
+        color: Colors.white,
         child: Form(
           key: _loginkey, //유효성 검증
           child: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             children: [
              const SizedBox(height: 80,),
+              // Lottie.asset('assets/116410-hello.json'),
+             // Lottie.asset('assets/lottie/116410-hello.zip'),
+             Lottie.network('https://assets2.lottiefiles.com/packages/lf20_7psw7qge.json'),
              // SizedBox(
              //   child: Image.asset('assets/images/helper_dark.png'),
              //   height: 150,
              //   width: 150,
              // ),
              const SizedBox(height: 20,),
-             const Text("WODaily",
-               textAlign: TextAlign.center,
-               style: TextStyle(fontWeight: FontWeight.bold,
-               fontSize: 25, color: Colors.white),
-             ),
+             // SizedBox(
+             //   width: 100,
+             //   height: 100,
+             //   child: Lottie.asset('assets/lottie/LottieHi.json'),
+             // ),
+             // Lottie.asset('assets/lottie/LottieHi.json'),
+             // const Text("WODaily",
+             //   textAlign: TextAlign.center,
+             //   style: TextStyle(fontWeight: FontWeight.bold,
+             //   fontSize: 25, color: Colors.white),
+             // ),
              const SizedBox(height: 20,),
              // TextFormField(
              //    controller: _useridController,
@@ -136,3 +154,4 @@ class _UserLoginPageState extends State<UserLoginPage>{
     );
   }
 }
+
