@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:judy_app/user/user_login.dart'; //user_login page import
+import 'package:judy_app/user/user_login.dart';
+import 'firebase_options.dart'; //user_login page import
 
 /*
 * 무조건 메인에서 시작된다.
@@ -9,9 +10,11 @@ import 'package:judy_app/user/user_login.dart'; //user_login page import
 *
 * 220930 - firebase연동 추가
 * */
-void main(){
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+void main() async{ //firebase 로그인 소스 추가
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
